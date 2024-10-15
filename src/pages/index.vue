@@ -1,5 +1,5 @@
 <template>
-  <HelloWorld />
+  <h1>jeffnawroth.me</h1>
 </template>
 
 <script lang="ts" setup>
