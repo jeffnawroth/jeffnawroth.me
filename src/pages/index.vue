@@ -3,5 +3,7 @@
 </script>
 
 <template>
-  <h1>jeffnawroth.me</h1>
+  <div class="text-h3">
+    Jeff Nawroth
+  </div>
 </template>
