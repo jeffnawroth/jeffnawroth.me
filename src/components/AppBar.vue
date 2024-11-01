@@ -33,15 +33,18 @@ const router = useRouter()
         size="small"
         icon="mdi-github"
         href="https://github.com/jeffnawroth"
+        variant="plain"
       />
       <v-btn
         size="small"
         icon="mdi-translate"
+        variant="plain"
       />
 
       <v-btn
         size="small"
         icon="mdi-theme-light-dark"
+        variant="plain"
       />
     </template>
   </v-app-bar>
