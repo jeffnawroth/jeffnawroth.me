@@ -1,5 +1,38 @@
 <script setup lang="ts">
+import { useStorage } from '@vueuse/core'
+import { useTheme } from 'vuetify'
+
 const router = useRouter()
+
+const theme = useTheme()
+
+const defaultTheme = 'dark'
+const storageTheme = useStorage('theme', defaultTheme)
+
+const themeIcon = computed(() => {
+  return theme.global.current.value.dark ? 'mdi-weather-night' : 'mdi-white-balance-sunny'
+})
+
+onMounted(() => {
+  setVuetifyTheme()
+})
+
+function toggleTheme() {
+  storageTheme.value = theme.global.current.value.dark ? 'light' : 'dark'
+  setVuetifyTheme()
+}
+
+function setVuetifyTheme() {
+  theme.global.name.value = storageTheme.value
+}
+
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
+  storageTheme.value = event.matches ? 'dark' : 'light'
+})
+
+watch(storageTheme, () => {
+  setVuetifyTheme()
+})
 </script>
 
 <template>
@@ -43,8 +76,9 @@ const router = useRouter()
 
       <v-btn
         size="small"
-        icon="mdi-theme-light-dark"
+        :icon="themeIcon"
         variant="plain"
+        @click="toggleTheme"
       />
     </template>
   </v-app-bar>
