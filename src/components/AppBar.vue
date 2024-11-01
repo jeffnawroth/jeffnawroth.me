@@ -24,11 +24,11 @@ const router = useRouter()
         class="custom-transform-class text-none"
       />
 
-      <v-btn
+      <!-- <v-btn
         size="small"
         icon="mdi-application-outline"
         to="/demos"
-      />
+      /> -->
       <v-btn
         size="small"
         icon="mdi-github"
