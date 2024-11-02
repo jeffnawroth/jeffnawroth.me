@@ -42,7 +42,6 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
-          port: 22
           script: |
             cd /var/www/jeffnawroth.me
             git pull origin main
