@@ -43,8 +43,10 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
+            pwd
             cd /var/www/jeffnawroth.me
-            ssh -i ${{secrets.KEY_PATH}} git pull origin main
+            pwd
+            git pull origin main
             pnpm install
             pnpm build
             sudo systemctl restart nginx
