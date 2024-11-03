@@ -45,6 +45,7 @@ jobs:
           script: |
             eval "$(ssh-agent -s)"
             ssh-add ${{ secrets.KEY_PATH }}
+            ${{ secrets.PASSPHRASE }}
             cd /var/www/jeffnawroth.me
             git pull origin main
             pnpm install
