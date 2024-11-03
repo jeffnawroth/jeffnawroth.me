@@ -43,9 +43,9 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
-            pwd
+            eval "$(ssh-agent -s)"
+            ssh-add ${{ secrets.KEY_PATH }}
             cd /var/www/jeffnawroth.me
-            pwd
             git pull origin main
             pnpm install
             pnpm build
