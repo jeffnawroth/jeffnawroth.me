@@ -41,14 +41,19 @@ watch(storageTheme, () => {
     flat
     color="transparent"
   >
-    <v-app-bar-title>
-      <div
+    <template #prepend>
+      <v-avatar
+        size="x-large"
         class="cursor-pointer"
+        alt="JN"
         @click="router.push('/')"
       >
-        JN
-      </div>
-    </v-app-bar-title>
+        <v-img
+          src="@/assets/favicon-96x96.png"
+        />
+      </v-avatar>
+    </template>
+
     <template #append>
       <v-btn
         variant="plain"
@@ -57,22 +62,12 @@ watch(storageTheme, () => {
         class="custom-transform-class text-none"
       />
 
-      <!-- <v-btn
-        size="small"
-        icon="mdi-application-outline"
-        to="/demos"
-      /> -->
       <v-btn
         size="small"
         icon="mdi-github"
         href="https://github.com/jeffnawroth"
         variant="plain"
       />
-      <!-- <v-btn
-        size="small"
-        icon="mdi-translate"
-        variant="plain"
-      /> -->
 
       <v-btn
         size="small"
