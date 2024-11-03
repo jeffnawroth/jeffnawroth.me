@@ -25,29 +25,3 @@ jobs:
 
       - name: Lint
         run: pnpm run lint
-
-  deploy:
-    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
-    needs: lint
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Deploy to VPS
-        uses: appleboy/ssh-action@v1.1.0
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          passphrase: ${{ secrets.PASSPHRASE }}
-          script: |
-            eval "$(ssh-agent -s)"
-            ssh-add ${{ secrets.KEY_PATH }}
-            ${{ secrets.PASSPHRASE }}
-            cd /var/www/jeffnawroth.me
-            git pull origin main
-            pnpm install
-            pnpm build
-            sudo systemctl restart nginx
