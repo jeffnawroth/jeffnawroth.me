@@ -68,11 +68,11 @@ watch(storageTheme, () => {
         href="https://github.com/jeffnawroth"
         variant="plain"
       />
-      <v-btn
+      <!-- <v-btn
         size="small"
         icon="mdi-translate"
         variant="plain"
-      />
+      /> -->
 
       <v-btn
         size="small"
