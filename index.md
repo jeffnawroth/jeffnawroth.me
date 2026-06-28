@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "Jeff Nawroth"
-  tagline: Hi, I am Jeff Nawroth, a master’s student in Business Informatics and a web developer from Germany.
+  tagline: Hi, I am Jeff Nawroth, a Business Informatics graduate (M.Sc., 2025) and a Junior Software Developer at CHECK24 from Germany. Outside of work, I race triathlons — I completed Ironman Hamburg 2026 this year.
   image:
     src: /favicon.svg
     alt: Jeff Nawroth
