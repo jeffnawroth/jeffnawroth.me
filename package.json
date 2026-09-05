@@ -19,7 +19,8 @@
     "bumpp": "^9.11.1",
     "eslint": "^9.39.4",
     "lint-staged": "^15.5.2",
-    "simple-git-hooks": "^2.13.1"
+    "simple-git-hooks": "^2.13.1",
+    "wrangler": "^4.129.0"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
